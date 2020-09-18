@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+      <form action="{% url 'security' %}" method="POST">
+            {% csrf_token %}
+            <h4> CREATE ACCOUNT</h4>
+          <input type="First_name" placeholder="First_name" required>
+          <input type="Last_name" placeholder="Last_name" required><br><br>
+            <input type="text" placeholder="Email" required><br><br>
+          <input type="phone" placeholder="Mobile_Number" required><br>
+            <p> Password must should be 8 characters </p>
+            <input type="password" placeholder="Password" required><br><br>
+            <input type="password" placeholder="ConfirmPassword" required><br><br>
+
+
+           <p >Please select your gender:</p>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label><br>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label><br>
+          <input type="radio" id="other" name="gender" value="other">
+          <label for="other">Trans</label>
+
+              <br>
+
+          <p>Please select your age:</p>
+          <input type="radio" id="age1" name="age" value="30">
+          <label for="age1">20 - 26</label><br>
+          <input type="radio" id="age2" name="age" value="60">
+          <label for="age2">27 - 38</label><br>
+          <input type="submit" value="Submit">
+      </form>
+</div>
+
+
+{% endblock %}

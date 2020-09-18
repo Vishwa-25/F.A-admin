@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="container">
+
+        <form action="{% url 'admin' %}" method="POST">
+            {% csrf_token %}>
+            <h3> CREATE ACCOUNT</h3>
+            <input type="text" placeholder="Email" required><br>
+            <input type="password" placeholder="Password" required><br>
+            <input type="password" placeholder="ConfirmPassword" required><br>
+
+            <div class="btn-box">
+                <button type="button" id="Next1">Next</button><br>
+            </div>
+        </form>
+
+        <form  id="Form2">
+            <h3> SOCIAL LINKS </h3>
+            <input type="text" placeholder="Medium"><br>
+            <input type="text" placeholder="Github"><br>
+            <input type="text" placeholder="Linked in "><br>
+
+            <div class="btn-box">
+                <button type="button" id="Back1">Back</button>
+                <button type="button" id="Next2">Next </button>
+
+            </div>
+        </form>
+
+        <form  id="Form3">
+            <h3> Personal Info  </h3>
+            <input type="text" placeholder="First Name " required>
+            <input type="text" placeholder="Last Name " required>
+            <input type="text" placeholder="Mobile No. " required>
+
+            <div class="btn-box">
+                <button type="button" id="Back2">Back</button>
+                <button type="button">Submmit </button>
+
+            </div>
+        </form>
+    </div>
+
+<script>
+
+
+</script>
+
+<form >
+  <p >Please select your gender:</p>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Trans</label>
+
+  <br>
+
+  <p>Please select your age:</p>
+  <input type="radio" id="age1" name="age" value="30">
+  <label for="age1">20 - 26</label><br>
+  <input type="radio" id="age2" name="age" value="60">
+  <label for="age2">27 - 38</label><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+{% endblock %}
